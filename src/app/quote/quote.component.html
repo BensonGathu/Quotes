@@ -1,0 +1,15 @@
+<h1>My Quotes</h1>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <ul>
+            <div *ngFor= 'let quote of quotes; let i = index'>
+                <li (click)='toggleDetails(i)'>Quote: {{quote.quote}}</li>
+                <app-quote-detail *ngIf='quote.showDetails' [quote]='quote' (isDelete)='QuoteDelete($event,i)'></app-quote-detail>
+            </div>
+        </ul>
+</div>
+<div class="col-md-6">
+    <app-quote-form></app-quote-form>
+</div>
+</div>
