@@ -2,14 +2,25 @@
 <hr>
 <div class="row">
     <div class="col-md-6">
-        <ul>
-            <div *ngFor= 'let quote of quotes; let i = index'>
-                <li (click)='toggleDetails(i)'>Quote: {{quote.quote}}</li>
-                <app-quote-detail *ngIf='quote.showDetails' [quote]='quote' (isDelete)='QuoteDelete($event,i)'></app-quote-detail>
-            </div>
-        </ul>
+<div class="card" *ngFor= 'let quote of quotes; let i = index'>
+<div class="card-header">
+    Quote
 </div>
+<div class="card-body" >
+    <blockquote class="blockquote mb-0">
+    <p (click)='toggleDetails(i)'>"{{quote.quote}}" </p>
+    <footer class="blockquote-footer">
+        <app-quote-detail *ngIf='quote.showDetails' [quote]='quote' (isDelete)='QuoteDelete($event,i)'></app-quote-detail>
+       
+    </footer>
+    </blockquote>
+</div>
+</div>
+</div>
+
 <div class="col-md-6">
-    <app-quote-form></app-quote-form>
+    <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
 </div>
 </div>
+
+

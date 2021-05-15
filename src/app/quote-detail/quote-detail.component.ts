@@ -18,11 +18,11 @@ export class QuoteDetailComponent implements OnInit {
   }
 
   upVote(){
-    
+    this.quote.like +=1;
   }
 
   downVote(){
-
+    this.quote.dislike +=1;
   }
 
   constructor() { }
