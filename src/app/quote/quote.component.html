@@ -1,26 +1,28 @@
-<h1>My Quotes</h1>
+<h1>WisePage</h1>
 <hr>
 <div class="row">
     <div class="col-md-6">
-<div class="card" *ngFor= 'let quote of quotes; let i = index'>
-<div class="card-header">
-    Quote
-</div>
-<div class="card-body" >
-    <blockquote class="blockquote mb-0">
-    <p (click)='toggleDetails(i)'>"{{quote.quote}}" </p>
-    <footer class="blockquote-footer">
-        <app-quote-detail *ngIf='quote.showDetails' [quote]='quote' (isDelete)='QuoteDelete($event,i)'></app-quote-detail>
-       
-    </footer>
-    </blockquote>
-</div>
-</div>
-</div>
-
-<div class="col-md-6">
-    <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
-</div>
+        <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
+    </div>
+    <div class="col-md-6">
+        <div class="card" *ngFor= 'let quote of quotes; let i = index'>
+            <div class="card-header">
+                Quote
+            </div>
+            <div class="card-body" >
+            <blockquote class="blockquote mb-0">
+                <p (click)='toggleDetails(i)'  appHighlight>"{{quote.quote}}" </p>
+    
+                <h6>Published by: {{quote.per}}</h6>
+                <h6>Created on: {{quote.date|date}}</h6>
+                <footer class="blockquote-footer">
+                    <app-quote-detail *ngIf='quote.showDetails' [quote]='quote' (isDelete)='QuoteDelete($event,i)'></app-quote-detail>
+                </footer>
+            </blockquote>
+            </div>
+        </div>
+    </div>
+    
 </div>
 
 

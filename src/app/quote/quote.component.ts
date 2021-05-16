@@ -9,8 +9,8 @@ import { Quote } from '../quote'
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [
-    new Quote("Lil Wayne","Make money live fast die young and leave a fresh corpse","Gathu",new Date()),
-    new Quote("Lil Wayne","Jesus saves , i spend","Anto",new Date())
+    new Quote("Walt Disney","The Best Way To Get Started Is To Quit Talking And Begin Doing","Gathu",new Date()),
+    new Quote("Winston Churchill","The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty","Anto",new Date())
   ]
 
   toggleDetails(index: number){

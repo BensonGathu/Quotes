@@ -7,7 +7,7 @@ import { Quote } from './quote'
 
 export class DateCountPipe implements PipeTransform {
 
-  transform(value: any): number {
+  transform(value: any): any {
     let today:any = new Date(); //get current date and time
     // let todayWithNoTime:any = new Date(today.getFullYear(), today.getMonth(), today.getDate())
     var dateDifference = Math.abs(value - today)/1000 //returns value in miliseconds
@@ -19,12 +19,19 @@ export class DateCountPipe implements PipeTransform {
     // var dateDifferenceSeconds = dateDifference*0.001; //converts miliseconds to seconds
     // var dateCounter = dateDifferenceSeconds/secondsInDay;
 
-    if (secs >= 1 && value < today){
-      return secs;
-    }else{
-      return 0;
+    function vals(days:number,hrs:number,mints:number,secs:number){
+      return `Quote was created ${days} days ${hrs} hours ${mints} minutes and ${secs} ago`
     }
-    
-  }
 
-}
+    if(secs>=1 && value < today){
+      // vals(days,hrs,mints,secs)
+      return vals(days,hrs,mints,secs)
+    }else{
+      return 0
+        }
+      }
+    }
+   
+  
+
+

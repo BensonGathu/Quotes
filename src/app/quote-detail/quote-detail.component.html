@@ -2,11 +2,15 @@
   <div class="row">
     <div class="col-sm-6">
       <h5 class="card-title">Author: {{quote.author}}</h5>
-      <p class="card-text">Quote created data ago</p>
+      <p class="card-text">{{quote.date|dateCount}}</p>
     </div>
     <div class="col-sm-6">
-      <a class="card-link"><i (click)='upVote()' class="fa fa-thumbs-up fa-2x">{{quote.like}}</i></a>
-      <a class="card-link"><i  (click) = 'downVote()' class="fa fa-thumbs-down fa-2x">{{quote.dislike}}</i></a>
+      <div class="like grow">
+        <a class="card-link"><i (click)='upVote()' class="fa fa-thumbs-up fa-2x like">{{quote.like}}</i></a>
+      </div>
+      <div class="dislike grow">
+        <a class="card-link"><i  (click) = 'downVote()' class="fa fa-thumbs-down fa-2x dislike">{{quote.dislike}}</i></a>
+      </div>
     </div>
   </div><p></p>
     <button type="button" class="btn btn-success"  (click) = 'deleteQuote(true)'>Delete</button>
@@ -15,15 +19,3 @@
   
   
 
-<!-- 
-    <div class="rating">
-      Thumbs up 
-    <div class="like grow">
-      <i class="fa fa-thumbs-up fa-3x like" aria-hidden="true"></i>
-    </div>
-    Thumbs down 
-    <div class="dislike grow">
-      <i class="fa fa-thumbs-down fa-3x like" aria-hidden="true"></i>
-    </div>
-  </div>
-   -->
