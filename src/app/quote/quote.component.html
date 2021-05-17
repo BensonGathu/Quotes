@@ -1,6 +1,6 @@
-<h1>WisePage</h1>
+<h1> <b> WISEPAGE</b></h1>
 <hr>
-<div class="row">
+<div class="row container">
     <div class="col-md-6">
         <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
     </div>
@@ -11,8 +11,11 @@
             </div>
             <div class="card-body" >
             <blockquote class="blockquote mb-0">
-                <p (click)='toggleDetails(i)'  appHighlight>"{{quote.quote}}" </p>
-    
+                
+                <p >"{{quote.quote}}" </p>
+                
+                <button type="button" class="btn btn-outline-info btn-sm" (click)='toggleDetails(i)'>Info</button>
+                    
                 <h6>Published by: {{quote.per}}</h6>
                 <h6>Created on: {{quote.date|date}}</h6>
                 <footer class="blockquote-footer">

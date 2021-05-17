@@ -20,7 +20,7 @@ export class DateCountPipe implements PipeTransform {
     // var dateCounter = dateDifferenceSeconds/secondsInDay;
 
     function vals(days:number,hrs:number,mints:number,secs:number){
-      return `Quote was created ${days} days ${hrs} hours ${mints} minutes and ${secs} ago`
+      return `${days} days ${hrs} hours ${mints} minutes and ${secs} ago`
     }
 
     if(secs>=1 && value < today){
