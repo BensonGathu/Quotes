@@ -9,9 +9,9 @@ import { Quote } from '../quote'
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [
-    new Quote("Walt Disney","The Best Way To Get Started Is To Quit Talking And Begin Doing","Gathu",new Date()),
-    new Quote("Winston Churchill","The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty","Anto",new Date()),
-    new Quote("Rob Siltanen","People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do","Son",new Date())
+    new Quote("Walt Disney","The Best Way To Get Started Is To Quit Talking And Begin Doing","Gathu",new Date(2021,2,13)),
+    new Quote("Winston Churchill","The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty","Anto",new Date(2021,3,25)),
+    new Quote("Rob Siltanen","People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do","Son",new Date(2020,11,31))
   ]
 
   toggleDetails(index: number){
